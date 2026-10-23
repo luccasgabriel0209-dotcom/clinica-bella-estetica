@@ -1,0 +1,172 @@
+/* CodeMakers-Design adaptation: LUNCH's dramatic opening and quiet catalogue,
+   with BMW's photographic framing and restrained typography. The Bella palette
+   and all service content remain specific to the clinic. */
+
+.site-header {
+  background: var(--paper);
+}
+
+.hero {
+  display: block;
+  min-height: 760px;
+  isolation: isolate;
+  background: #21191b;
+  color: #fff7f0;
+  overflow: hidden;
+}
+
+.hero-visual {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  min-height: 0;
+  background: #281d20;
+}
+
+.hero-photo {
+  background-position: center 46%;
+  filter: saturate(.5) sepia(.12) brightness(.7);
+}
+
+.hero-visual::after {
+  background: linear-gradient(90deg, rgba(30, 18, 23, .94) 0%, rgba(37, 23, 28, .78) 40%, rgba(31, 20, 23, .18) 85%),
+              linear-gradient(0deg, rgba(30, 18, 23, .5), transparent 45%);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  min-height: 760px;
+  width: min(66%, 800px);
+  padding: 105px 0 85px 5%;
+}
+
+.hero .eyebrow,
+.hero h1,
+.hero-lede,
+.hero .hero-proof strong,
+.hero .hero-proof span,
+.hero .text-link,
+.hero-caption {
+  color: #fff7f0;
+}
+
+.hero .eyebrow { color: #e5c2ba; }
+
+.hero h1 {
+  font-size: clamp(62px, 6.5vw, 100px);
+  letter-spacing: -.06em;
+  line-height: 1.08;
+  max-width: 770px;
+  margin: 35px 0 28px;
+}
+
+.hero h1 em { color: #e7bcb7; }
+.hero-lede { max-width: 510px; }
+.hero .button-primary { background: #f7e9e1; color: var(--wine-deep); }
+.hero .button-primary:hover { background: #fff; }
+.hero .text-link { border-color: #e8c7bd; }
+.hero .proof-stars { color: #e8b7a6 !important; }
+.hero .proof-divider { background: rgba(255, 255, 255, .32); }
+.hero .hero-proof span { opacity: .82; }
+.hero-seal { width: 120px; height: 120px; right: 40px; top: 38px; }
+.hero-seal span { font-size: 63px; }
+.hero-photo-note { right: 42px; left: auto; text-align: right; }
+.hero-caption { bottom: 24px; left: 5%; opacity: .7; }
+
+.trust-strip { background: var(--paper); color: var(--wine); border-bottom: 1px solid var(--line); }
+.trust-inner { min-height: 118px; }
+.trust-symbol { color: #a77576; }
+
+.intro { padding-top: 145px; padding-bottom: 145px; }
+.intro h2 { max-width: 770px; }
+.doctor { background: #e9ddd5; }
+.doctor-art { box-shadow: none; }
+
+.services { padding-top: 145px; }
+.service-grid { display: block; background: transparent; border: 0; margin-top: 52px; }
+.service {
+  min-height: 132px;
+  padding: 22px 6px;
+  display: grid;
+  grid-template-columns: 11% 1fr;
+  align-items: center;
+  gap: 16px;
+  border-top: 1px solid #cbbab2;
+  background: transparent;
+}
+.service:last-child { border-bottom: 1px solid #cbbab2; }
+.service:hover { background: rgba(231, 213, 205, .34); }
+.service-index { align-self: center; font: 20px var(--serif); }
+.service-content {
+  display: grid;
+  grid-template-columns: minmax(210px, 1fr) minmax(230px, 1fr) auto;
+  align-items: center;
+  gap: 38px;
+}
+.service h3 { font-size: clamp(25px, 2.6vw, 38px); margin: 0; }
+.service p { max-width: 340px; margin: 0; }
+.service a { white-space: nowrap; }
+
+.service-featured {
+  min-height: 435px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 35px 42px;
+  margin-bottom: 12px;
+  border: 0;
+  background: #4f343a;
+}
+.service-featured:hover { background: #4f343a; }
+.service-featured .service-index { align-self: flex-start; color: #fff; z-index: 2; }
+.service-featured .service-content { display: block; }
+.service-featured h3 { font-size: clamp(38px, 4vw, 62px); margin: 0 0 12px; }
+.service-featured p { margin: 0 0 18px; color: #fff; }
+.service-featured .service-art-lips {
+  background: linear-gradient(0deg, rgba(30, 16, 23, .83), rgba(30, 16, 23, .06) 70%),
+              url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1400&q=85&fit=crop') center/cover no-repeat;
+}
+
+.gallery-grid { gap: 7px; }
+.footer { background: #33252a; color: #f4e8e1; }
+.footer .wordmark, .footer-main h3, .footer-main a:not(.wordmark) { color: #f4e8e1; }
+.footer-main p, .footer-main address, .footer-bottom { color: #ddc9c1; }
+.footer-bottom { border-color: rgba(255,255,255,.22); }
+
+@media (max-width: 820px) {
+  .hero, .hero-copy { min-height: 740px; }
+  .hero-copy { width: 100%; padding: 95px 25px 48px; }
+  .hero h1 { max-width: 650px; }
+  .hero-visual { margin: 0; }
+  .hero-visual::after { background: linear-gradient(90deg, rgba(30,18,23,.88), rgba(30,18,23,.5)), linear-gradient(0deg, rgba(30,18,23,.65), transparent 60%); }
+  .hero-photo-note { display: none; }
+  .hero-caption { display: none; }
+  .service-content { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .service-content a { grid-column: 2; }
+  .service-featured .service-content { display: block; }
+}
+
+@media (max-width: 560px) {
+  .hero, .hero-copy { min-height: 790px; }
+  .hero-copy { padding: 65px 20px 40px; }
+  .hero h1 { font-size: clamp(54px, 13vw, 72px); line-height: 1.08; margin-top: 26px; }
+  .hero-lede { font-size: 15px; }
+  .hero-actions { width: 100%; }
+  .hero-visual { margin: 0; }
+  .hero-photo { background-position: 61% center; }
+  .hero-visual::after { background: linear-gradient(0deg, rgba(29,17,22,.95), rgba(29,17,22,.79) 56%, rgba(29,17,22,.49)); }
+  .hero-seal { display: none; }
+  .hero-proof { padding-top: 38px; }
+  .trust-inner { padding: 29px 0; }
+  .intro, .services { padding-top: 88px; }
+  .service { min-height: 0; grid-template-columns: 43px 1fr; padding: 23px 0; }
+  .service-content { display: block; }
+  .service h3 { font-size: 27px; margin: 0 0 8px; }
+  .service p { margin: 0 0 12px; }
+  .service-featured { min-height: 430px; padding: 26px; }
+  .service-featured h3 { font-size: 43px; }
+  .footer-main { grid-template-columns: 1fr 1fr; }
+}
+
