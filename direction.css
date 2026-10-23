@@ -38,7 +38,7 @@
   z-index: 2;
   min-height: 760px;
   width: min(66%, 800px);
-  padding: 105px 0 85px 5%;
+  padding: 105px 0 85px max(20px, calc((100vw - 1320px) / 2));
 }
 
 .hero .eyebrow,
@@ -149,16 +149,16 @@
 }
 
 @media (max-width: 560px) {
-  .hero, .hero-copy { min-height: 790px; }
-  .hero-copy { padding: 65px 20px 40px; }
-  .hero h1 { font-size: clamp(54px, 13vw, 72px); line-height: 1.08; margin-top: 26px; }
+  .hero, .hero-copy { min-height: 0; }
+  .hero-copy { padding: 46px 20px 34px; }
+  .hero h1 { font-size: clamp(46px, 11.5vw, 58px); line-height: 1.08; margin: 20px 0 18px; }
   .hero-lede { font-size: 15px; }
-  .hero-actions { width: 100%; }
+  .hero-actions { width: 100%; margin-top: 24px; gap: 18px; }
   .hero-visual { margin: 0; }
   .hero-photo { background-position: 61% center; }
   .hero-visual::after { background: linear-gradient(0deg, rgba(29,17,22,.95), rgba(29,17,22,.79) 56%, rgba(29,17,22,.49)); }
   .hero-seal { display: none; }
-  .hero-proof { padding-top: 38px; }
+  .hero-proof { padding-top: 30px; }
   .trust-inner { padding: 29px 0; }
   .intro, .services { padding-top: 88px; }
   .service { min-height: 0; grid-template-columns: 43px 1fr; padding: 23px 0; }
