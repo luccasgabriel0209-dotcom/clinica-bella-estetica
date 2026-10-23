@@ -126,10 +126,13 @@
 .service-featured p { margin: 0 0 18px; color: #fff; }
 .service-featured .service-art-lips {
   background: linear-gradient(0deg, rgba(30, 16, 23, .83), rgba(30, 16, 23, .06) 70%),
-              url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1400&q=85&fit=crop') center/cover no-repeat;
+              url('assets/preenchimento-labial.jpg') center/cover no-repeat;
 }
 
 .gallery-grid { gap: 7px; }
+.gallery-one { background-image: url('assets/ambiente-clinica.jpg'); }
+.gallery-two { background-image: url('assets/ritual-facial.jpg'); background-position: center; }
+.gallery-three { background-image: url('assets/cuidado-corporal.jpg'); }
 .footer { background: #33252a; color: #f4e8e1; }
 .footer .wordmark, .footer-main h3, .footer-main a:not(.wordmark) { color: #f4e8e1; }
 .footer-main p, .footer-main address, .footer-bottom { color: #ddc9c1; }
@@ -165,8 +168,32 @@
   .service-content { display: block; }
   .service h3 { font-size: 27px; margin: 0 0 8px; }
   .service p { margin: 0 0 12px; }
-  .service-featured { min-height: 430px; padding: 26px; }
-  .service-featured h3 { font-size: 43px; }
+  .service-featured {
+    min-height: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    background: transparent;
+  }
+  .service-featured:hover { background: transparent; }
+  .service-featured .service-index {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+  }
+  .service-featured .service-art-lips {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background-position: center;
+  }
+  .service-featured .service-content { padding: 22px 4px 28px; }
+  .service-featured h3 { color: var(--wine); font-size: 34px; }
+  .service-featured p { color: var(--muted); }
+  .service-featured a { color: var(--wine); border-color: #ae8581; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-one { grid-column: auto; }
+  .gallery-image, .gallery-one { width: 100%; height: auto; aspect-ratio: 16 / 10; }
   .footer-main { grid-template-columns: 1fr 1fr; }
 }
-
